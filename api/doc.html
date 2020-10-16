@@ -1,0 +1,499 @@
+<!--
+ API Documentation HTML Template  - 1.0.1
+ Copyright © 2016 Florian Nicolas
+ Licensed under the MIT license.
+ https://github.com/ticlekiwi/API-Documentation-HTML-Template
+ !-->
+ <!DOCTYPE html>
+ <html class="no-js" lang="en">
+ <head>
+     <meta charset="utf-8">
+     <title>API - Dokumentáció</title>
+     <meta name="description" content="">
+     <meta name="author" content="ticlekiwi">
+ 
+     <meta http-equiv="cleartype" content="on">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 
+     <link rel="stylesheet" href="css/hightlightjs-dark.css">
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/highlight.min.js"></script>
+     <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,500|Source+Code+Pro:300" rel="stylesheet">
+     <link rel="stylesheet" href="css/style.css" media="all">
+     <script>hljs.initHighlightingOnLoad();</script>
+     <script ></script>
+ </head>
+ 
+ <body>
+ <div class="left-menu">
+     <div class="content-logo">
+         <img width='150px' src="../assets/images/logo.png">
+         <span>API Dokumentáció</span>
+     </div>
+     <input type="text" id="searchbar" onkeyup="searchFunction()" placeholder="Keresés" >
+     <div class="content-menu">
+         <ul id="menu-list">
+             <li class="scroll-to-link active" data-target="get-started">
+                 <a>Kezdet</a>
+             </li>
+             <li class="scroll-to-link" data-target="login">
+                 <a>Login</a>
+             </li>
+             <li class="scroll-to-link" data-target="get-category">
+                 <a>Get Category</a>
+             </li>
+             <li class="scroll-to-link" data-target="add-category">
+                 <a>Add Category</a>
+             </li>
+             <li class="scroll-to-link" data-target="delete-category">
+                 <a>Delete Category</a>
+             </li>
+             <li class="scroll-to-link" data-target="get-images">
+                 <a>Get Images</a>
+             </li>
+             <li class="scroll-to-link" data-target="upload-image">
+                 <a>Upload Image</a>
+             </li>
+             <li class="scroll-to-link" data-target="delete-image">
+                 <a>Delete Image</a>
+             </li>
+             <li class="scroll-to-link" data-target="errors">
+                 <a>Hibák</a>
+             </li>
+         </ul>
+     </div>
+ </div>
+ <div class="content-page">
+     <div class="content-code"></div>
+     <div class="content">
+         <div class="overflow-hidden content-section" id="content-get-started">
+             <h2 id="get-started">Kezdet</h2>
+             <pre>
+     API Endpoint
+ 
+         {URI}/api/{method}
+                 </pre>
+             <p>
+                 Az API endpointokat az URL /api endpointja után megadott metódusnevekkel érheted el.
+             </p>
+             <p>
+                 Az API használatához API kulcsra van szükséged, ezt bejelentkezés után megkapod.
+             </p>
+         </div>
+ 
+ 
+ 
+         <div class="overflow-hidden content-section" id="content-login">
+             <h2 id="login">Login</h2>
+             <pre><code class="bash">
+                 # Példa
+                 curl \
+                 -X POST https://uni.rfr.hu/api/login \
+                 -F 'api=api_kulcsod' \
+                 -F 'image=@ut/a/Imagehoz'
+             </code></pre>
+             <p>
+                 Ehhez a művelethez egy POST kérést kell küldened erre az endpointra:<br>
+                 <code class="higlighted">api/login</code>
+             </p>
+             <br>
+             <pre><code class="json">
+                     Példa válasz :
+ 
+                     {
+                     'error' => false,
+                     'message' => 'Sikeres képfeltöltés!',
+                     'link' => 'https://uni.rfr.hu/fdsD5325g.jpg'
+                     }
+             </code></pre>
+             <h4>SZÜKSÉGES PARAMÉTEREK</h4>
+             <table>
+                 <thead>
+                 <tr>
+                     <th>Név</th>
+                     <th>Típus</th>
+                     <th>Leírás</th>
+                 </tr>
+                 </thead>
+                 <tbody>
+                 <tr>
+                     <td>api</td>
+                     <td>String</td>
+                     <td>Az API kulcsod.</td>
+                 </tr>
+                 <tr>
+                     <td>image</td>
+                     <td>Image</td>
+                     <td>A kép, amit fel szeretnél küldeni form-datával.</td>
+                 </tr>
+                 </tbody>
+             </table>
+         </div>
+ 
+         <div class="overflow-hidden content-section" id="content-get-category">
+             <h2 id="get-category">Get Category</h2>
+             <pre><code class="bash">
+                 # Példa
+                 curl \
+                 -X GET https://uni.rfr.hu/api/getCategory \
+                 -F 'api=api_kulcsod' \
+                 -F 'image=@ut/a/Imagehoz'
+             </code></pre>
+             <p>
+                 Ehhez a művelethez egy GET kérést kell küldened erre az endpointra:<br>
+                 <code class="higlighted">api/getCategory</code>
+             </p>
+             <br>
+             <pre><code class="json">
+                     Példa válasz :
+ 
+                     {
+                     'error' => false,
+                     'message' => 'Sikeres képfeltöltés!',
+                     'link' => 'https://uni.rfr.hu/fdsD5325g.jpg'
+                     }
+             </code></pre>
+             <h4>SZÜKSÉGES PARAMÉTEREK</h4>
+             <table>
+                 <thead>
+                 <tr>
+                     <th>Név</th>
+                     <th>Típus</th>
+                     <th>Leírás</th>
+                 </tr>
+                 </thead>
+                 <tbody>
+                 <tr>
+                     <td>api</td>
+                     <td>String</td>
+                     <td>Az API kulcsod.</td>
+                 </tr>
+                 <tr>
+                     <td>image</td>
+                     <td>Image</td>
+                     <td>A kép, amit fel szeretnél küldeni form-datával.</td>
+                 </tr>
+                 </tbody>
+             </table>
+         </div>
+ 
+         <div class="overflow-hidden content-section" id="content-add-category">
+             <h2 id="add-category">Add Category</h2>
+             <pre><code class="bash">
+                 # Példa
+                 curl \
+                 -X POST https://uni.rfr.hu/api/addCategory \
+                 -F 'api=api_kulcsod' \
+                 -F 'image=@ut/a/Imagehoz'
+             </code></pre>
+             <p>
+                 Ehhez a művelethez egy POST kérést kell küldened erre az endpointra:<br>
+                 <code class="higlighted">api/addCategory</code>
+             </p>
+             <br>
+             <pre><code class="json">
+                     Példa válasz :
+ 
+                     {
+                     'error' => false,
+                     'message' => 'Sikeres képfeltöltés!',
+                     'link' => 'https://uni.rfr.hu/fdsD5325g.jpg'
+                     }
+             </code></pre>
+             <h4>SZÜKSÉGES PARAMÉTEREK</h4>
+             <table>
+                 <thead>
+                 <tr>
+                     <th>Név</th>
+                     <th>Típus</th>
+                     <th>Leírás</th>
+                 </tr>
+                 </thead>
+                 <tbody>
+                 <tr>
+                     <td>api</td>
+                     <td>String</td>
+                     <td>Az API kulcsod.</td>
+                 </tr>
+                 <tr>
+                     <td>image</td>
+                     <td>Image</td>
+                     <td>A kép, amit fel szeretnél küldeni form-datával.</td>
+                 </tr>
+                 </tbody>
+             </table>
+         </div>
+ 
+         <div class="overflow-hidden content-section" id="content-delete-category">
+             <h2 id="delete-category">Delete Category</h2>
+             <pre><code class="bash">
+                 # Példa
+                 curl \
+                 -X POST https://uni.rfr.hu/api/deleteCategory \
+                 -F 'api=api_kulcsod' \
+                 -F 'image=@ut/a/Imagehoz'
+             </code></pre>
+             <p>
+                 Ehhez a művelethez egy POST kérést kell küldened erre az endpointra:<br>
+                 <code class="higlighted">api/deleteCategory</code>
+             </p>
+             <br>
+             <pre><code class="json">
+                     Példa válasz :
+ 
+                     {
+                     'error' => false,
+                     'message' => 'Sikeres képfeltöltés!',
+                     'link' => 'https://uni.rfr.hu/fdsD5325g.jpg'
+                     }
+             </code></pre>
+             <h4>SZÜKSÉGES PARAMÉTEREK</h4>
+             <table>
+                 <thead>
+                 <tr>
+                     <th>Név</th>
+                     <th>Típus</th>
+                     <th>Leírás</th>
+                 </tr>
+                 </thead>
+                 <tbody>
+                 <tr>
+                     <td>api</td>
+                     <td>String</td>
+                     <td>Az API kulcsod.</td>
+                 </tr>
+                 <tr>
+                     <td>image</td>
+                     <td>Image</td>
+                     <td>A kép, amit fel szeretnél küldeni form-datával.</td>
+                 </tr>
+                 </tbody>
+             </table>
+         </div>
+ 
+         <div class="overflow-hidden content-section" id="content-get-images">
+             <h2 id="get-images">Get Images</h2>
+             <pre><code class="bash">
+                 # Példa
+                 curl \
+                 -X GET https://uni.rfr.hu/api/getImages \
+                 -F 'api=api_kulcsod' \
+                 -F 'image=@ut/a/Imagehoz'
+             </code></pre>
+             <p>
+                 Ehhez a művelethez egy GET kérést kell küldened erre az endpointra:<br>
+                 <code class="higlighted">api/getImages</code>
+             </p>
+             <br>
+             <pre><code class="json">
+                     Példa válasz :
+ 
+                     {
+                     'error' => false,
+                     'message' => 'Sikeres képfeltöltés!',
+                     'link' => 'https://uni.rfr.hu/fdsD5325g.jpg'
+                     }
+             </code></pre>
+             <h4>SZÜKSÉGES PARAMÉTEREK</h4>
+             <table>
+                 <thead>
+                 <tr>
+                     <th>Név</th>
+                     <th>Típus</th>
+                     <th>Leírás</th>
+                 </tr>
+                 </thead>
+                 <tbody>
+                 <tr>
+                     <td>api</td>
+                     <td>String</td>
+                     <td>Az API kulcsod.</td>
+                 </tr>
+                 <tr>
+                     <td>image</td>
+                     <td>Image</td>
+                     <td>A kép, amit fel szeretnél küldeni form-datával.</td>
+                 </tr>
+                 </tbody>
+             </table>
+         </div>
+ 
+         <div class="overflow-hidden content-section" id="upload-image">
+             <h2 id="upload-image">upload Image</h2>
+             <pre><code class="bash">
+                 # Példa
+                 curl \
+                 -X POST https://uni.rfr.hu/api/uploadImage \
+                 -F 'api=api_kulcsod' \
+                 -F 'image=@ut/a/Imagehoz'
+             </code></pre>
+             <p>
+                 Ehhez a művelethez egy POST kérést kell küldened erre az endpointra:<br>
+                 <code class="higlighted">api/uploadImage</code>
+             </p>
+             <br>
+             <pre><code class="json">
+                     Példa válasz :
+ 
+                     {
+                     'error' => false,
+                     'message' => 'Sikeres képfeltöltés!',
+                     'link' => 'https://uni.rfr.hu/fdsD5325g.jpg'
+                     }
+             </code></pre>
+             <h4>SZÜKSÉGES PARAMÉTEREK</h4>
+             <table>
+                 <thead>
+                 <tr>
+                     <th>Név</th>
+                     <th>Típus</th>
+                     <th>Leírás</th>
+                 </tr>
+                 </thead>
+                 <tbody>
+                 <tr>
+                     <td>api</td>
+                     <td>String</td>
+                     <td>Az API kulcsod.</td>
+                 </tr>
+                 <tr>
+                     <td>image</td>
+                     <td>Image</td>
+                     <td>A kép, amit fel szeretnél küldeni form-datával.</td>
+                 </tr>
+                 </tbody>
+             </table>
+         </div>
+ 
+ 
+ 
+         <div class="overflow-hidden content-section" id="content-delete-image">
+             <h2 id="delete-image ">delete Image</h2>
+             <pre><code class="bash">
+                 # Példa
+                 curl \
+                 -X POST https://uni.rfr.hu/api/deleteImage \
+                 -F 'api=api_kulcsod' \
+                 -F 'file=@ut/a/Imagehoz'
+             </code></pre>
+             <p>
+                 Ehhez a művelethez egy POST kérést kell küldened erre az endpointra:<br>
+                 <code class="higlighted">api/deleteImage</code>
+             </p>
+             <br>
+             <pre><code class="json">
+                     Példa válasz :
+ 
+                     {
+                     'error' => false,
+                     'message' => 'Sikeres képtörlés!',
+                     'link' => 'https://uni.rfr.hu/fdsD5325g.jpg'
+                     }
+             </code></pre>
+             <h4>SZÜKSÉGES PARAMÉTEREK</h4>
+             <table>
+                 <thead>
+                 <tr>
+                     <th>Név</th>
+                     <th>Típus</th>
+                     <th>Leírás</th>
+                 </tr>
+                 </thead>
+                 <tbody>
+                 <tr>
+                     <td>api</td>
+                     <td>String</td>
+                     <td>Az API kulcsod.</td>
+                 </tr>
+                 <tr>
+                     <td>image</td>
+                     <td>Image</td>
+                     <td>A kép, amit törölni szeretnél.</td>
+                 </tr>
+                 </tbody>
+             </table>
+         </div>
+         <div class="overflow-hidden content-section" id="content-errors">
+             <h2 class="alma" id="errors">Errors</h2>
+             <p>
+                 The Westeros API uses the following error codes:
+             </p>
+             <table>
+                 <thead>
+                 <tr>
+                     <th>Error Code</th>
+                     <th>Meaning</th>
+                 </tr>
+                 </thead>
+                 <tbody>
+                 <tr>
+                     <td>X000</td>
+                     <td>
+                         Some parameters are missing. This error appears when you don't pass every mandatory parameters.
+                     </td>
+                 </tr>
+                 <tr>
+                     <td>X001</td>
+                     <td>
+                         Unknown or unvalid <code class="higlighted">secret_key</code>. This error appears if you use an unknow API key or if your API key expired.
+                     </td>
+                 </tr>
+                 <tr>
+                     <td>X002</td>
+                     <td>
+                         Unvalid <code class="higlighted">secret_key</code> for this domain. This error appears if you use an  API key non specified for your domain. Developper or Universal API keys doesn't have domain checker.
+                     </td>
+                 </tr>
+                 <tr>
+                     <td>X003</td>
+                     <td>
+                         Unknown or unvalid user <code class="higlighted">token</code>. This error appears if you use an unknow user <code class="higlighted">token</code> or if the user <code class="higlighted">token</code> expired.
+                     </td>
+                 </tr>
+                 </tbody>
+             </table>
+         </div>
+     </div>
+     <div class="content-code"></div>
+ </div>
+ <script src="js/script.js"></script>
+ <script>
+
+    function searchFunction() {
+        var input, filter, sections, h2, i, txtValue;
+        input = document.getElementById("searchbar");
+        filter = input.value.toUpperCase();
+        
+        sections = document.getElementsByClassName("content-section");
+        
+        for (i = 0; i < sections.length; i++) {
+            h2 = sections[i].getElementsByTagName("h2")[0];
+            txtValue = h2.textContent;
+            
+            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                sections[i].style.display = "";
+            } else {
+                sections[i].style.display = "none";
+            }
+        }
+
+        ul = document.getElementById("menu-list");
+        li = ul.getElementsByTagName('li');
+
+        for (i = 0; i < li.length; i++) {
+            a = li[i].getElementsByTagName("a")[0];
+            txtValue = a.textContent || a.innerText;
+            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+            } else {
+            li[i].style.display = "none";
+            }
+        }
+
+
+    }
+    
+</script>
+ </body>
+ </html>
