@@ -1,3 +1,8 @@
 .page_base{
     background-color: blue;
+    align-self: center;
+};
+
+.fst_row{
+    height: 20%;
 }
