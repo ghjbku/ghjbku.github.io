@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>APITABLE 3</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+
+
+$(document).ready(function(){
+
+$.ajax({
+    type: "GET",
+    url: "https://reqres.in/api/users/",
+
+    data: '$format=json',
+
+    dataType: 'json',
+    success: function (data) {
+ $.each(data.data,function(d,results){
+     console.log(data);
+
+ $("#apiData").append(
+                        "<tr>"
+                          +"<td>"+results.first_name+"</td>"
+                          +"<td>"+results.last_name+"</td>"
+                          +"<td>"+results.id+"</td>"
+                          +"<td>"+results.email+"</td>"
+  +"<td>"+results.bentrust+"</td>"
+                        +"</tr>" )
+                    })
+ } 
+
+});
+
+});
+
+
+</script>
+</head>
+<body>
+
+
+    <table id="apiTable">
+
+        <thead>
+            <tr>
+            <th>Firstname</th>
+            <br>
+            <th>Lastname</th>
+            <br>
+            <th>Id</th>
+            <br>
+            <th>Email</th>
+        </tr>
+        </thead>
+        <tbody id="apiData"></tbody>    
+
+
+
+
+
+</body>
+</html>

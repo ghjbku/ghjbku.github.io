@@ -1,14 +1,19 @@
-.page_base{
-    background-color: blue;
-    align-self: center;
+body{
+background: black;
 }
-
+div {
+    width: 100%;
+}
 .fst_row{
-    height: 20%;
+    height: 5%;
+    width: 100%;
+    background-color: rgb(209, 21, 21);
 }
-.snd_row{
-    height: 70%;
+.snd_row {
+    height: 92%;
+    background-color: grey;
 }
 .footer_row{
-    height: 10%;
+    height: 3%;
+    background-color: rgb(17, 182, 72);
 }
