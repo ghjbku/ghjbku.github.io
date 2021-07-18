@@ -1,0 +1,50 @@
+body{
+background: black;
+}
+div {
+    width: 100%;
+}
+.navbar{
+    top:0;
+    position: -webkit-sticky;
+    position: sticky;
+    width: fit-content;
+    height: auto;
+    text-align: center;
+    background-color: rgb(14, 11, 11);
+    color: aliceblue;
+    margin-bottom: 0.5em;
+    margin-top: -0.5em;
+}
+.navbar li {
+    display: inline-block;
+    font-size: 1.25em;
+    padding: 0.1em;
+  }
+  .navbar li:nth-child(n+1):not(:last-child)::after {
+    content: " |";
+  }
+  a:hover{
+    background-color: rgb(49, 45, 45);
+  }
+  a{
+    text-decoration: none;
+  }
+  a:visited{
+    color: rgb(136, 248, 196);
+  }
+.page_main {
+    height: auto;
+    background-color: grey;
+    margin-bottom: -0.5em;
+}
+.footer_list{
+    height: 5%;
+    background-color: rgb(17, 182, 72);
+    text-align: center;
+}
+.footer_list li{
+    display: inline-block;
+    font-size: 0.75em;
+    padding: 0.1em;
+}
