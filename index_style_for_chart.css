@@ -44,6 +44,27 @@ text-align: center;
 .desc li{
   display: block;
 }
+
+#trade_items {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  display: inline-block;
+}
+
+#trade_items td, #trade_items th {
+  border: 1px solid #ddd;
+  padding: 8px;
+  width:fit-content;
+}
+#trade_items tr:hover {background-color: #ddd;}
+#trade_items th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #04AA6D;
+  color: white;
+}
+
 .footer_list{
     height: 5%;
     background-color: rgb(17, 182, 72);
