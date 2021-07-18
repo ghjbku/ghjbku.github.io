@@ -23,10 +23,13 @@ div {
   .navbar li:hover{
     background-color: rgb(54, 50, 50);
   }
-.snd_row {
+.page_main {
     height: 92%;
     background-color: grey;
     margin-bottom: -0.5em;
+}
+.page_main h2{
+text-align: center;
 }
 .footer_list{
     height: 5%;
