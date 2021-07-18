@@ -8,7 +8,8 @@ div {
     top:0;
     position: -webkit-sticky;
     position: sticky;
-    height: 5%;
+    width: fit-content;
+    height: auto;
     text-align: center;
     background-color: rgb(14, 11, 11);
     color: aliceblue;
@@ -20,16 +21,35 @@ div {
     font-size: 1.25em;
     padding: 0.1em;
   }
-  .navbar li:hover{
-    background-color: rgb(54, 50, 50);
+  a:hover{
+    background-color: rgb(49, 45, 45);
+  }
+  a{
+    text-decoration: none;
+  }
+  a:visited{
+    color: rgb(136, 248, 196);
   }
 .page_main {
-    height: 92%;
+    height: auto;
     background-color: grey;
     margin-bottom: -0.5em;
 }
+.image{
+    display: inline-block;
+    vertical-align: middle;
+}
+.page_main ul li {
+    padding-top: 0.5em;
+}
 .page_main h2{
 text-align: center;
+}
+.desc li{
+    display: inline-block;
+}
+.mastery_desc{
+    color: rgb(156, 4, 156);
 }
 .footer_list{
     height: 5%;
