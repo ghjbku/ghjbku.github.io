@@ -38,6 +38,12 @@ div {
     background-color: grey;
     margin-bottom: -0.5em;
 }
+.page_main h2{
+text-align: center;
+}
+.desc li{
+  display: block;
+}
 .footer_list{
     height: 5%;
     background-color: rgb(17, 182, 72);
