@@ -4,17 +4,37 @@ background: black;
 div {
     width: 100%;
 }
-.fst_row{
+.navbar{
+    top:0;
+    position: -webkit-sticky;
+    position: sticky;
     height: 5%;
     text-align: center;
-    width: 100%;
-    background-color: rgb(209, 21, 21);
+    background-color: rgb(14, 11, 11);
+    color: aliceblue;
+    margin-bottom: 0.5em;
+    margin-top: -0.5em;
 }
+.navbar li {
+    display: inline-block;
+    font-size: 1.25em;
+    padding: 0.1em;
+  }
+  .navbar li:hover{
+    background-color: rgb(54, 50, 50);
+  }
 .snd_row {
     height: 92%;
     background-color: grey;
+    margin-bottom: -0.5em;
 }
-.footer_row{
-    height: 3%;
+.footer_list{
+    height: 5%;
     background-color: rgb(17, 182, 72);
+    text-align: center;
+}
+.footer_list li{
+    display: inline-block;
+    font-size: 0.75em;
+    padding: 0.1em;
 }
