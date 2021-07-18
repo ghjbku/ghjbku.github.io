@@ -21,6 +21,9 @@ div {
     font-size: 1.25em;
     padding: 0.1em;
   }
+  .navbar li:nth-child(n+1):not(:last-child)::after {
+    content: " |";
+  }
   a:hover{
     background-color: rgb(49, 45, 45);
   }
