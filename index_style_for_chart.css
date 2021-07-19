@@ -65,6 +65,22 @@ text-align: center;
   color: white;
 }
 
+.apprentice{
+color:#38e70d;
+}
+.skilled{
+  color:rgb(0, 26, 255);
+}
+.prof{
+  color:yellow;
+}
+.arti{
+  color:rgb(255, 133, 89);
+}
+.master{
+  color:purple;
+}
+
 .footer_list{
     height: 5%;
     background-color: rgb(17, 182, 72);
