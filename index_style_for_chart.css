@@ -42,7 +42,7 @@ div {
 text-align: center;
 }
 .desc li{
-  display: block;
+  display: inline-block;
 }
 
 #trade_items {
@@ -75,12 +75,14 @@ color:#38e70d;
   color:yellow;
 }
 .arti{
-  color:rgb(255, 133, 89);
+  color:rgb(250, 117, 68);
 }
 .master{
   color:purple;
 }
-
+.guru{
+  color:red;
+}
 .footer_list{
     height: 5%;
     background-color: rgb(17, 182, 72);
