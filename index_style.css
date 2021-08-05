@@ -31,11 +31,11 @@ div {
     text-decoration: none;
   }
   a:visited{
-    color: rgb(136, 248, 196);
+    color: rgb(42, 160, 105);
   }
 .page_main {
     height: auto;
-    background-color: grey;
+    background-color: rgba(255, 255, 255, 0.774);
     margin-bottom: -0.5em;
 }
 .image{

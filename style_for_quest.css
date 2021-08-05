@@ -25,7 +25,7 @@ div {
     content: " |";
   }
   a:hover{
-    background-color: rgb(49, 45, 45);
+    background-color: rgb(71, 66, 66);
   }
   a{
     text-decoration: none;
@@ -35,7 +35,7 @@ div {
   }
 .page_main {
     height: auto;
-    background-color: grey;
+    background-color: rgb(123, 155, 120);
     margin-bottom: -0.5em;
 }
 .page_main h2{
@@ -45,44 +45,6 @@ text-align: center;
   display: inline-block;
 }
 
-#trade_items {
-  font-family: Arial, Helvetica, sans-serif;
-  border-collapse: collapse;
-  display: inline-block;
-}
-
-#trade_items td, #trade_items th {
-  border: 1px solid #ddd;
-  padding: 8px;
-  width:fit-content;
-}
-#trade_items tr:hover {background-color: #ddd;}
-#trade_items th {
-  padding-top: 12px;
-  padding-bottom: 12px;
-  text-align: left;
-  background-color: #04AA6D;
-  color: white;
-}
-
-.apprentice{
-color:#38e70d;
-}
-.skilled{
-  color:rgb(0, 26, 255);
-}
-.prof{
-  color:yellow;
-}
-.arti{
-  color:rgb(250, 117, 68);
-}
-.master{
-  color:purple;
-}
-.guru{
-  color:red;
-}
 .footer_list{
     height: 5%;
     background-color: rgb(17, 182, 72);
