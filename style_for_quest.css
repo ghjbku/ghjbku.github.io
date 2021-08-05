@@ -4,6 +4,9 @@ background: black;
 div {
     width: 100%;
 }
+p{
+  font-weight: bolder;
+}
 .navbar{
     top:0;
     position: -webkit-sticky;
