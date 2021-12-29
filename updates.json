@@ -1,0 +1,16 @@
+{
+  "addons": {
+    "{abcd1234-1abc-1234-12ab-abcdef123456}": {
+      "updates": [
+        {
+          "version": "2",
+          "update_link": "https://ghjbku.github.io/extension/addon-2.xpi"
+        },
+        {
+          "version": "3",
+          "update_link": "https://ghjbku.github.io/extension/addon-3.xpi"
+        }
+      ]
+    }
+  }
+}
