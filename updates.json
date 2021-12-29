@@ -3,12 +3,12 @@
     "{ea0488a8-8b91-4ae1-854f-ee802f1b6fab}": {
       "updates": [
         {
-          "version": "2",
-          "update_link": "https://ghjbku.github.io/extension/addon-2.xpi"
+          "version": "0.0.1",
+          "update_link": "https://ghjbku.github.io/extension/addon-0_0_1.xpi"
         },
         {
-          "version": "3",
-          "update_link": "https://ghjbku.github.io/extension/addon-3.xpi"
+          "version": "0.0.2",
+          "update_link": "https://ghjbku.github.io/extension/addon-0_0_2.xpi"
         }
       ]
     }
