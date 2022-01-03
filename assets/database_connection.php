@@ -10,6 +10,7 @@
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
     } 
+    echo $dbname;
 
     $sql = "SELECT * FROM DataTable";  //This is where I specify what data to query
     $result = $conn->query($sql);

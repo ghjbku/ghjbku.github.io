@@ -43,67 +43,20 @@ function init() {
         document.getElementById(clicked_id).remove();
     }
 
-    // Create the XHR object.
-function createCORSRequest(method, url) {
-    var xhr = new XMLHttpRequest();
-    if ("withCredentials" in xhr) {
-      // XHR for Chrome/Firefox/Opera/Safari.
-      xhr.open(method, url, true);
-    } else if (typeof XDomainRequest != "undefined") {
-      // XDomainRequest for IE.
-      xhr = new XDomainRequest();
-      xhr.open(method, url);
-    } else {
-      // CORS not supported.
-      xhr = null;
-    }
-    return xhr;
-  }
-  
-  // Helper method to parse the title tag from the response.
-  function getTitle(text) {
-    return text.match('<title>(.*)?</title>')[1];
-  }
-  
-  // Make the actual CORS request.
-  function makeCorsRequest() {
-    // This is a sample server that supports CORS.
-    var url = 'ghjbku.github.io/assets/database_connection.php';
-  
-    var xhr = createCORSRequest('GET', url);
-    if (!xhr) {
-      alert('CORS not supported');
-      return;
-    }
-  
-    // Response handlers.
-    xhr.onload = function() {
-      var text = xhr.responseText;
-      var title = getTitle(text);
-      alert('Response from CORS request to ' + url + ': ' + title);
-    };
-  
-    xhr.onerror = function(err) {
-      alert(err);
-    };
-  
-    xhr.send();
-  }
-
     function connect_to_db() {
         console.log("inside func");
-
-        makeCorsRequest();
+        var xhttp = new XMLHttpRequest();
+        var url = 'https://ghjbku.github.io/assets/database_connection.php';
         // Define a callback function
-       /* xhttp.onload = function (result) {
-            var obj = jQuery.parseJSON(result);
-            console.log(obj);
+        xhttp.onload = function (result) {
+            //var obj = JSON.parse(result);
+            console.log(result);
         }
 
         // Send a request
-        xhttp.open("GET", "assets/database_connection.php");
+        xhttp.open("GET", url);
         xhttp.send();
-        */
+
         console.log("after func");
     }
 
