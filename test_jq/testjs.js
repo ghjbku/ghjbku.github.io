@@ -18,29 +18,27 @@ function refresh_table(obj){
                 <th class="distance_col no_border_top">Data</th>
             </tr>
         </tbody>`;
-
     document.getElementById("history_body").remove();
     document.getElementById("history_table").innerHTML = base_table;
-    document.getElementById("deletion_div").innerHTML ="";
-    add_rows(obj);
+
+    console.log("before 2s");
+    setTimeout(function(){add_rows(obj);},2000);
+    console.log("after 2s");
 }
 
 function add_rows(obj){
     console.log(obj);
-    if(obj.length < 1){
-        return;
-    }
     
-    var len = obj.length/2;
+    var len = obj.length;
     var id_num =[];
     var data_num = [];
-    for (let i = 0; i <  obj.length; i=i+2) {
+    for (let i = 0; i < len; i=i+2) {
        id_num.push(i);
     } 
-    for (let j = 1; j <  obj.length; j=j+2) {
+    for (let j = 1; j < len; j=j+2) {
         data_num.push(j);
     }
-    for (let c = 0; c < len; c++){
+    for (let c = 0; c < len/2; c++){
         add_row(obj[id_num[c]],obj[data_num[c]]);
     }
 }
@@ -51,6 +49,9 @@ function add_row(id,data) {
     id_var = id;
     data_var = data;
     var counter;
+
+    
+    history_table.innerHTML = base_table;
     /*the base number of rows is 2, the add row button, and the header row
     so if the length is less than 3, then that means the table is empty,
     so we start the counter from 1!
@@ -139,7 +140,7 @@ function init(){
         $("#refresh_data_button").click(function() {    
             console.log("clicked");           
                     $.ajax({
-                        url : './display.php', // your php file
+                        url : 'http://127.0.0.1/cooldown/test_jq/display.php', // your php file
                         type : 'GET', // type of the HTTP request
                         success : function(data){
                             var obj = jQuery.parseJSON(data);

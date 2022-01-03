@@ -7,6 +7,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 	<link rel="stylesheet" href="assets/index_style.css">
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 	<script src="assets/index.js"></script>
 
 	<title> History </title>
@@ -20,58 +21,18 @@
 			<table id="history_table">
 				<tbody id="history_body">
 					<tr id="history_table_add_row_button_container">
-						<td id="add_row_button" class="no_border_top" colspan="3">add a new row</td>
+						<td id="refresh_data_button" class="no_border_top" colspan="3">refresh data</td>
 					</tr>
 					<tr id="history_table_header">
-						<th class="date_col no_border_top">Date</th>
-						<th class="distance_col no_border_top">Delivery Distance</th>
-						<th class="carbon_col no_border_top">Carbon emission</th>
-					</tr>
-					<tr class="history_table_row" id="tr_1">
-						<td class="date_col">09.04.1200</td>
-						<td class="distance_col">100km</td>
-						<td class="carbon_col">250</td>
-					</tr>
-					<tr class="history_table_row" id="tr_2">
-						<td class="date_col ">09.04.1201</td>
-						<td class="distance_col ">200km</td>
-						<td class="carbon_col ">500</td>
+						<th class="date_col no_border_top">ID</th>
+						<th class="distance_col no_border_top">Data</th>
 					</tr>
 				</tbody>
 			</table>
 			<div id="deletion_div">
-				<button class="deletion_div_buttons" id="tr_1_delete">delete</button>
-				<button class="deletion_div_buttons" id="tr_2_delete">delete</button>
 			</div>
 		</div>
 	</div>
-
-	<!--#region modal for editing text-->
-		<div id="add_row_modal" class="modal">
-
-			<!-- Modal content -->
-			<div class="modal-content">
-				<div class="modal-body">
-					<span id="close">&times;</span>
-
-					<div class="date_div"><br>
-						<label>Date</label><br>
-						<input class="input_text_type" id="modal_date_text"></p>
-					</div>
-					<div class="distance_div">
-						<label>Delivery Distance</label><br>
-						<input class="input_text_type" id="modal_distance_text"></p>
-					</div>
-					<div class="carbon_div">
-						<label>Carbon Emission</label><br>
-						<input class="input_text_type" id="modal_carbon_text"></p>
-					</div>
-					<div class="modal_buttons">
-						<p id="modal_add_row" class="send_edit">add row</p>
-					</div>
-				</div>
-			</div>
-		</div>
 
 	<!--#region Footer-->
     <div class="footer">
