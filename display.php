@@ -9,5 +9,5 @@ $con=mysqli_connect($servername,$username,$password);
 mysqli_select_db($dbname,$con);
 $result=mysqli_query("select * from DataTable",$con);
 
-echo $result;
+echo json_encode($result);
 ?>

@@ -8,7 +8,7 @@
        $("#display").click(function() {    
            console.log("clicked");           
    
-                 $.ajax({    //create an ajax request to display.php
+                /* $.ajax({    //create an ajax request to display.php
                     type: "GET",
                     url: "https://ghjbku.github.io/display.php",             
                     dataType: "html",   //expect html to be returned                
@@ -17,15 +17,15 @@
                         //alert(response);
                     }
             
-                });
-                   /* $.ajax({
-                        url : 'display.php', // your php file
+                });*/
+                   $.ajax({
+                        url : 'https://ghjbku.github.io/display.php', // your php file
                         type : 'GET', // type of the HTTP request
                         success : function(data){
-                            var obj = jQuery.parseJSON(data);
-                            console.log(obj);
+                            //var obj = jQuery.parseJSON(data);
+                            console.log(data);
                         }
-                    });*/
+                    });
         });
    });
    
