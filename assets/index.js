@@ -43,8 +43,73 @@ function init() {
         document.getElementById(clicked_id).remove();
     }
 
+    // Create the XHR object.
+function createCORSRequest(method, url) {
+    var xhr = new XMLHttpRequest();
+    if ("withCredentials" in xhr) {
+      // XHR for Chrome/Firefox/Opera/Safari.
+      xhr.open(method, url, true);
+    } else if (typeof XDomainRequest != "undefined") {
+      // XDomainRequest for IE.
+      xhr = new XDomainRequest();
+      xhr.open(method, url);
+    } else {
+      // CORS not supported.
+      xhr = null;
+    }
+    return xhr;
+  }
+  
+  // Helper method to parse the title tag from the response.
+  function getTitle(text) {
+    return text.match('<title>(.*)?</title>')[1];
+  }
+  
+  // Make the actual CORS request.
+  function makeCorsRequest() {
+    // This is a sample server that supports CORS.
+    var url = 'ghjbku.github.io/assets/database_connection.php';
+  
+    var xhr = createCORSRequest('GET', url);
+    if (!xhr) {
+      alert('CORS not supported');
+      return;
+    }
+  
+    // Response handlers.
+    xhr.onload = function() {
+      var text = xhr.responseText;
+      var title = getTitle(text);
+      alert('Response from CORS request to ' + url + ': ' + title);
+    };
+  
+    xhr.onerror = function(err) {
+      alert(err);
+    };
+  
+    xhr.send();
+  }
+
+    function connect_to_db() {
+        console.log("inside func");
+
+        makeCorsRequest();
+        // Define a callback function
+       /* xhttp.onload = function (result) {
+            var obj = jQuery.parseJSON(result);
+            console.log(obj);
+        }
+
+        // Send a request
+        xhttp.open("GET", "assets/database_connection.php");
+        xhttp.send();
+        */
+        console.log("after func");
+    }
+
     /*adds a new row to the table and a delete button associated with it */
     function add_row(deletion_div, new_button_template) {
+        connect_to_db();
         date_var = document.getElementById("modal_date_text").value;
         distance_var = document.getElementById("modal_distance_text").value;
         carbon_var = document.getElementById("modal_carbon_text").value;
