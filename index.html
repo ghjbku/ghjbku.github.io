@@ -1,67 +1,117 @@
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <!DOCTYPE html>
-<html>
-    <head>
-        <link rel="stylesheet" type="text/css" href="./index_style.css">
-        <title>
-            Windsake's Trading site
-        </title>
-        <script type="text/javascript" src="jquery-3.3.1.js" ></script>
-    </head>
-    <body>
-        <ul class="navbar">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="xp_calculation.html">EXP calculation</a></li>
-                <li><a href="trade_guild_quests.html">Guild Quests(Trade)</a></li>
-                <li><a href="https://incendar.com/bdolifeskillxp.php?term=Trading">incendar xp chart</a></li>
-                <li>
-                    <a href="https://www.somethinglovely.net/bdo/tradepacks/">Famme's Trading items</a>
-                </li>
-        </ul>
-        <div class="page_main">
-            <h2>Welcome on my webpage!</h2>
-            <ul class="desc">
-            <li>
-                Hello everyone, My name is Windsake and the site is about Black desert online's 
-                trading lifeskill.</li>
-            <li>
-                Obviously a lot of great sites exist already which i do not even dream of surpassing,
-                the page is for information i felt like sharing or could not find elsewhere
-                and had to look up myself in the game.
-            </li>
-            <li>I will also put out my methods on doing trading, which might not be what is the best,
-                but it will surely be the most fun in my eyes.</li>
+<html lang="en">
 
-            <h3 >I'm playing on the EU region, my main server being Velia2.</h3>
-            <li>If you are curious about my character skill level(currently</li>
-                <li class="mastery_desc"> Master 8</li>
-                <li>),you can take a look at my family sheet here:
-                    <a href="https://www.naeu.playblackdesert.com/Adventure/Profile?profileTarget=tbXSK7e39Sb3U3yPi7UDjuA1FmiynGKZJO0HH4NUfCRC3ucFNTUtlC6D2FJTJoH93u0XRjt2HPDOyb7S1tGgAzCEJoww2h06XII5xac6mF7R3cBTW9XUiaR4W1PHg2nYzfPjVGbmSokCq5jbICky4vo1pKDg8LPdQcTDTUVwDAU6tOp1yowWeJ33REMPh5Nl">
-                    WindPalace</a></li>
-            </ul>
-            <hr>
-            <ul class="desc">
-                <li>I'm mostly doing <b>active trading</b> for xp, which i found very fast and you can
-                research your next move while you are autopathing between the cities.</li>
-                <li>It gives you a lot of xp based on the distance between the nodes you are trading with
-                    (the distance is set, no matter how big of a detour you do)</li>
-                <li>You can see the distance bonus of your chosen nodes if you look at <a href="https://www.somethinglovely.net/bdo/crates/">Famme's site
-                </a>.</li>
-                <li>You just pick a skill level(for the distance bonus, you can pick any), add a crate and the node selector will appear:</li>
-                <li>
-                <img class="image" src="skill_level_add.png" alt="select_skill_add_crate" width="450" height="auto">    
-                <img class="image" src="famme_crate_distance.png" alt="famme's crate webpage" width="450" height="300"> 
-                <img class="image" src="from_to.png" alt="from_node_to_node" width="auto" height="auto">   
-                </li>
-                <li>Trade Managers restock their trade items about 30m-1h after you first "bought" their wares.
-                    Exact time will be found out soon!
-                </li>
-            </ul>
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!--
+	<link href="assets/css/mystyles.css" rel="stylesheet" type="text/css" id="chgCss">
+	<link rel="stylesheet" href="assets/css/TestingCSS/testing.css">
+	<link rel="stylesheet" href="assets/css/historypage.css">
+-->
+
+	<title> History </title>
+
+</head>
+
+<body class="Aito-color">
+	<div id="header" class="Aito-color">
+
+        <!--
+        Left Side stuff which includes logo and stuff
+        I split these in to two divs each so they don't interact with each other's values
+        -->
+        <div class="header-left">
+            <a href="index.html">
+                <img class="logo" src="assets/images/common/logo.png" alt="Logo of Cooldown"></img>
+            </a>
+        </div>
+        <div class="header-left">
+            <a href="index.html">
+                <img class="cooldown_text" alt="text of Cooldown"></img>
+            </a>
         </div>
 
-        <ul class = "footer_list">
-                <li>webpage created by Windsake</li>
-                <li class ="date_text" style="cursor:wait">July 2021.</li>
-        </ul>
-    </body>
+		
+        <!--
+        Right side stuff which includes settings button and sign in.
+        I split these in to two divs each so they don't interact with each other's values
+        -->
+        <div class="header-right">
+            <a href=""><img class="settings_button" src="assets/images/common/Darkmode.png" alt="settings button"></img></a>
+        </div>	
+        <div class="header-right">
+            <a href="signin.html"><button id="signbutton">Sign in</button></a>
+        </div>		
+    </div>
+
+	<!-- main container for the information -->
+	<div class="container" style="margin-left: -100p;">
+		<div id="container">
+			<table id="history_table">
+				<tbody id="history_body">
+					<tr id="history_table_add_row_button_container">
+						<td id="add_row_button" class="no_border_top" colspan="3">add a new row</td>
+					</tr>
+					<tr id="history_table_header">
+						<th class="date_col no_border_top">Date</th>
+						<th class="distance_col no_border_top">Delivery Distance</th>
+						<th class="carbon_col no_border_top">Carbon emission</th>
+					</tr>
+					<tr class="history_table_row" id="tr_1">
+						<td class="date_col">09.04.1200</td>
+						<td class="distance_col">100km</td>
+						<td class="carbon_col">250</td>
+					</tr>
+					<tr class="history_table_row" id="tr_2">
+						<td class="date_col ">09.04.1201</td>
+						<td class="distance_col ">200km</td>
+						<td class="carbon_col ">500</td>
+					</tr>
+				</tbody>
+			</table>
+			<div id="deletion_div">
+				<button class="deletion_div_buttons" id="tr_1_delete">delete</button>
+				<button class="deletion_div_buttons" id="tr_2_delete">delete</button>
+			</div>
+		</div>
+	</div>
+
+	<!--#region modal for editing text-->
+		<div id="add_row_modal" class="modal">
+
+			<!-- Modal content -->
+			<div class="modal-content">
+				<div class="modal-body">
+					<span id="close">&times;</span>
+
+					<div class="date_div"><br>
+						<label>Date</label><br>
+						<input class="input_text_type" id="modal_date_text"></p>
+					</div>
+					<div class="distance_div">
+						<label>Delivery Distance</label><br>
+						<input class="input_text_type" id="modal_distance_text"></p>
+					</div>
+					<div class="carbon_div">
+						<label>Carbon Emission</label><br>
+						<input class="input_text_type" id="modal_carbon_text"></p>
+					</div>
+					<div class="modal_buttons">
+						<p id="modal_add_row" class="send_edit">add row</p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	<!--#region Footer-->
+    <div class="footer">
+        <div class="footerbox">
+            <a href="" class="TosStyle">Terms of service</a>
+        </div>
+    </div>
+    <!-- #endregion -->
+</body>
+
 </html>
