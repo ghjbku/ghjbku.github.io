@@ -1,62 +1,46 @@
-<!DOCTYPE html>
 <html>
-<head>
-<title>APITABLE 3</title>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script>
-
-
-$(document).ready(function(){
-
-$.ajax({
-    type: "GET",
-    url: "https://reqres.in/api/users/",
-
-    data: '$format=json',
-
-    dataType: 'json',
-    success: function (data) {
- $.each(data.data,function(d,results){
-     console.log(data);
-
- $("#apiData").append(
-                        "<tr>"
-                          +"<td>"+results.first_name+"</td>"
-                          +"<td>"+results.last_name+"</td>"
-                          +"<td>"+results.id+"</td>"
-                          +"<td>"+results.email+"</td>"
-                        +"</tr>" )
-                    })
- } 
-
-});
-
-});
-
-
-</script>
-</head>
-<body>
-
-
-    <table id="apiTable">
-
-        <thead>
-            <tr>
-            <th>Firstname</th>
-            <br>
-            <th>Lastname</th>
-            <br>
-            <th>Id</th>
-            <br>
-            <th>Email</th>
-        </tr>
-        </thead>
-        <tbody id="apiData"></tbody>    
-
-
-
-
-
-</body>
-</html>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+   
+    <script type="text/javascript">
+   
+    $(document).ready(function() {
+   
+       $("#display").click(function() {    
+           console.log("clicked");           
+   
+                 $.ajax({    //create an ajax request to display.php
+                    type: "GET",
+                    url: "display.php",             
+                    dataType: "html",   //expect html to be returned                
+                    success: function(response){                    
+                        $("#responsecontainer").html(response); 
+                        //alert(response);
+                    }
+            
+                });
+                   /* $.ajax({
+                        url : 'display.php', // your php file
+                        type : 'GET', // type of the HTTP request
+                        success : function(data){
+                            var obj = jQuery.parseJSON(data);
+                            console.log(obj);
+                        }
+                    });*/
+        });
+   });
+   
+   </script>
+   
+   <body>
+   <h3 align="center">Manage Student Details</h3>
+   <table border="1" align="center">
+      <tr>
+          <td> <input type="button" id="display" value="Display All Data" /> </td>
+      </tr>
+   </table>
+   <div id="responsecontainer" align="center">
+   
+   </div>
+   </body>
+   </html>
+   
