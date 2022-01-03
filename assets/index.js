@@ -139,7 +139,7 @@ function init(){
         $("#refresh_data_button").click(function() {    
             console.log("clicked");           
                     $.ajax({
-                        url : './assets/display.php', // your php file
+                        url : 'assets/display.php', // your php file
                         type : 'GET', // type of the HTTP request
                         success : function(data){
                             var obj = jQuery.parseJSON(data);
