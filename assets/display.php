@@ -1,5 +1,7 @@
 <?php
+
 header('Access-Control-Allow-Origin: *'); 
+
 $servername = "db4free.net";
 $username = "windsake";
 $password = "123456789";
@@ -14,5 +16,6 @@ while ($row = $result->fetch_assoc()){
     array_push($arr,$row["id"],$row["data"]);
 }
 
-echo json_encode($arr);
+echo(json_encode($arr));
+
 ?>
