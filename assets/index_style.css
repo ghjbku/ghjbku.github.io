@@ -81,6 +81,7 @@ tr:nth-last-child(1)>td:nth-last-child(n){
 }
 
 .no_borders{
+  padding-top: 70px;
   border: 0px;
 }
 
