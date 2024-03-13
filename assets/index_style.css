@@ -36,7 +36,6 @@ box-sizing: border-box;
 }
 
 th,td{
-  border: 1px solid #696969;
   width: 40%;
 }
 #refresh_data_button{
@@ -75,6 +74,14 @@ tr>td:nth-last-child(1){
 /*the last row of the table,all columns of it*/
 tr:nth-last-child(1)>td:nth-last-child(n){
   border-bottom: 0px;
+}
+
+.borders{
+  border: 1px solid #696969;
+}
+
+.no_borders{
+  border: 0px;
 }
 
 .no_border_top{
