@@ -80,7 +80,7 @@ tr:nth-last-child(1)>td:nth-last-child(n){
   border: 1px solid #696969;
 }
 
-.no_borders{
+.no_border{
   padding-top: 70px;
   border: 0px;
 }
