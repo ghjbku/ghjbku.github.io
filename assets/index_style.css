@@ -76,8 +76,13 @@ tr>td:nth-last-child(1){
 tr:nth-last-child(1)>td:nth-last-child(n){
   border-bottom: 0px;
 }
+
 .no_border_top{
   border-top:0px;
+}
+
+.no_border_bot{
+  border-bot:0px;
 }
 
 .date_div,.distance_div,.carbon_div
