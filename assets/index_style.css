@@ -37,7 +37,7 @@ box-sizing: border-box;
 
 th,td{
   border: 1px solid #696969;
-  width: 10%;
+  width: 40%;
 }
 #refresh_data_button{
   height: 2em;
